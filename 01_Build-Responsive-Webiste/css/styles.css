@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,700,900");
 /* 
 font-family: 'Raleway', sans-serif;
 */
@@ -7,6 +7,7 @@ font-family: 'Raleway', sans-serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	transition: 0.4s;
 }
 
 img {
@@ -27,20 +28,47 @@ body {
 /* Typography
 ================= */
 
+h1 {
+	font-weight: 100;
+	font-size: 2rem;
+}
+
+p {
+	font-size: 0.9em;
+}
+
+a {
+	text-decoration: none;
+}
+
 .title {
-	font-size: 2.5rem;
-	margin-bottom: 1.5em;
+	font-size: 2rem;
+	font-weight: 900;
 }
 .title span {
 	display: block;
-	font-weight: 300;
-	font-size: 0.8em;
+	font-weight: 100;
+	font-size: 0.68em;
+	margin: 0 0 2em 0;
 }
 
 @media (min-width: 60rem) {
 	.title {
 		font-size: 3.7rem;
 	}
+}
+
+/* Button & a Focus
+================= */
+a.logo:focus {
+	outline: 1.3px solid #00ff6c;
+	outline-offset: 0.5em;
+}
+
+a:focus,
+.button:focus,
+button:focus {
+	outline: none;
 }
 
 /* Button
@@ -57,7 +85,6 @@ body {
 
 .button-accent {
 	color: #00ff6c;
-	transition: 0.4s;
 	border-color: #00ff6c;
 }
 
@@ -88,7 +115,7 @@ nav ul {
 }
 nav li {
 	display: inline-block;
-	margin: 0 1em;
+	margin: 0 0.5em;
 }
 nav a {
 	font-weight: 900;
@@ -97,10 +124,9 @@ nav a {
 	font-size: 0.8rem;
 	padding: 0.5em;
 	color: #fff;
-	transition: 0.4s;
 }
 nav a:hover,
-nav a:hover {
+nav a:focus {
 	color: #00ff6c;
 }
 
@@ -119,7 +145,7 @@ nav a:hover {
 	background-image: url(../img/hero-bg.jpg);
 	background-size: cover;
 	background-position: center;
-	padding: 10em 0;
+	padding: 10em 0 7em 0;
 	color: #fff;
 }
 
@@ -131,5 +157,66 @@ nav a:hover {
 
 	header nav {
 		align-items: start;
+	}
+}
+
+/* Home About
+=========== */
+.home-about-textbox {
+	background-color: #232323;
+	padding: 3em;
+	width: 100%;
+	/* 
+	NOTE: CSS syle that look like tutorial 
+	but i think the width 100% will do
+	width: 100vw;
+	margin-left: -2.5%;
+	*/
+	outline: 2px solid #00ff6c;
+	outline-offset: -2.5em;
+	color: #fff;
+}
+
+.home-about-textbox h1 {
+	color: #00ff6c;
+	position: relative;
+	top: -0.9em;
+	background-color: #232323;
+	max-width: 7em;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.home-about-textbox p {
+	position: relative;
+	top: -1.5em;
+	margin: 1em 0;
+}
+
+@media (min-width: 60rem) {
+	.home-about {
+		background: url(../img/who-we-are.jpg);
+		height: 100vh;
+		margin: 0 5%;
+		background-size: cover;
+		background-position: center;
+	}
+
+	.home-about-textbox {
+		width: 40%;
+		height: auto;
+		position: relative;
+		left: 20px;
+		bottom: 50px;
+	}
+
+	.home-about-textbox h1 {
+		left: 5%;
+		transform: translate(0, 0);
+	}
+
+	.home-about-textbox p {
+		margin: 1em;
+		text-align: left;
 	}
 }
