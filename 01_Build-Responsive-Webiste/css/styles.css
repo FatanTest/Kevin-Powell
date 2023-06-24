@@ -38,6 +38,10 @@ p {
 	color: white;
 }
 
+ul {
+	list-style: none;
+}
+
 a {
 	text-decoration: none;
 }
@@ -90,10 +94,21 @@ button:focus {
 	border-color: #00ff6c;
 }
 
+.button-accent-black {
+	color: #232323;
+	border-color: #232323;
+}
+
 .button-accent:hover,
 .button-accent:focus {
 	background: #00ff6c;
 	color: #232323;
+}
+
+.button-accent-black:hover,
+.button-accent-blac:focus {
+	background: #232323;
+	color: #00ff6c;
 }
 
 @media (min-width: 60rem) {
@@ -273,9 +288,9 @@ nav a:focus {
 }
 
 @media (min-width: 37rem) {
-	.port-item {
-		width: 50%;
-		float: left;
+	.port-item-holder {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 	}
 
 	.port-item p {
@@ -284,10 +299,9 @@ nav a:focus {
 }
 
 @media (min-width: 60rem) {
-	.port-item {
-		width: 33%;
-		float: left;
-		overflow: hidden;
+	.port-item-holder {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
 	}
 
 	.port-desc {
@@ -300,5 +314,101 @@ nav a:focus {
 
 	.port-item p {
 		font-size: 1.3em;
+	}
+}
+
+/* Call to Action Section
+======================== */
+
+.cta {
+	background-color: #00ff6c;
+	color: black;
+	padding: 10em 0;
+	position: relative;
+	z-index: 999;
+}
+
+/* Typography CTA */
+
+.cta h1 {
+	font-size: 3.7rem;
+	font-weight: 900;
+}
+
+.cta p {
+	font-size: 2em;
+	color: black;
+	margin-bottom: 1em;
+}
+
+/* Footer
+======================== */
+
+footer {
+	background-color: #232323;
+	padding-top: 5em;
+}
+
+.footer-holder {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+}
+
+.footer-holder P,
+.footer-holder a {
+	color: white;
+	transition: 0.2s;
+}
+
+.footer-holder p {
+	font-size: 1.2em;
+}
+
+.footer-holder a:hover {
+	color: #00ff6c;
+}
+
+.footer-1 {
+	padding: 0 1em;
+}
+
+.copyright {
+	margin-top: 3em;
+	padding-bottom: 0.8em;
+}
+
+.copyright span {
+	font-size: 0.9em;
+}
+
+@media (min-width: 37rem) {
+	.footer-holder {
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: repeat(2, 1fr);
+	}
+
+	.footer-1 {
+		grid-column: 1/4;
+		padding-left: 1.5em;
+		margin-bottom: 2em;
+	}
+}
+
+@media (min-width: 60rem) {
+	.footer-holder {
+		grid-template-columns: repeat(6, 1fr);
+		grid-template-rows: 1fr;
+	}
+
+	.footer-holder p {
+		text-align: left;
+	}
+
+	.footer-1 {
+		grid-column: 1/4;
+		padding-left: 1.5em;
+		margin-bottom: 0;
 	}
 }
